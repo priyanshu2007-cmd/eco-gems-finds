@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Vintage Leather Jacket",
+    "description": "Beautiful vintage leather jacket in excellent condition. Made from high-quality leather that gets better with age.",
+    "price": 89.99,
+    "category": "Fashion",
+    "image": "/src/assets/product-jacket.jpg",
+    "sellerId": "1",
+    "createdAt": "2024-01-20",
+    "condition": "Good"
+  },
+  {
+    "id": "2",
+    "title": "Professional Camera",
+    "description": "High-quality professional camera perfect for photography enthusiasts. Includes original box and accessories.",
+    "price": 299.99,
+    "category": "Electronics",
+    "image": "/src/assets/product-camera.jpg",
+    "sellerId": "1",
+    "createdAt": "2024-01-18",
+    "condition": "Excellent"
+  },
+  {
+    "id": "3",
+    "title": "Oak Dining Table",
+    "description": "Solid oak dining table that seats 6 people comfortably. Perfect for family dinners and gatherings.",
+    "price": 199.99,
+    "category": "Furniture",
+    "image": "/src/assets/product-table.jpg",
+    "sellerId": "1",
+    "createdAt": "2024-01-16",
+    "condition": "Good"
+  }
+]
