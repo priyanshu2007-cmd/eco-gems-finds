@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Filter, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,29 +9,10 @@ import { useProducts } from '@/hooks/useProducts';
 import Header from '@/components/Header';
 
 const Products = () => {
-  const { products, addToCart } = useProducts();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  // ✅ Now pulling search + category logic from the hook
+  const { products, addToCart, searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } = useProducts();
 
   const categories = ['all', 'Fashion', 'Electronics', 'Furniture', 'Books', 'Home & Garden', 'Sports'];
-
-  useEffect(() => {
-    let filtered = products;
-
-    if (searchQuery) {
-      filtered = filtered.filter(product =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(product => product.category === selectedCategory);
-    }
-
-    setFilteredProducts(filtered);
-  }, [products, searchQuery, selectedCategory]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -78,7 +59,7 @@ const Products = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+          {products.map((product) => (
             <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
               <div className="aspect-square overflow-hidden rounded-t-lg">
                 <img 
@@ -94,7 +75,7 @@ const Products = () => {
                 </p>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-lg font-bold text-primary">
-                    ${product.price}
+                    Rs. {product.price}
                   </span>
                   <span className="text-xs bg-sage/20 text-sage-foreground px-2 py-1 rounded">
                     {product.category}
@@ -118,7 +99,7 @@ const Products = () => {
           ))}
         </div>
 
-        {filteredProducts.length === 0 && (
+        {products.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground">No products found matching your criteria.</p>
           </div>

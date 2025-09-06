@@ -99,8 +99,8 @@ const FeaturedItems = () => {
 
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-primary">${item.price}</span>
-                      <span className="text-sm text-muted-foreground line-through">${item.originalPrice}</span>
+                      <span className="text-2xl font-bold text-primary">Rs{item.price}</span>
+                      <span className="text-sm text-muted-foreground line-through">Rs{item.originalPrice}</span>
                     </div>
                   </div>
 

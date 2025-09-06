@@ -22,12 +22,16 @@ const Hero = () => {
           Join our eco-friendly marketplace where every purchase helps reduce waste and creates a more sustainable future
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="eco" size="lg" className="text-lg px-8 py-6">
-            Start Shopping
-          </Button>
-          <Button variant="earth" size="lg" className="text-lg px-8 py-6">
-            Sell Your Items
-          </Button>
+          <a href="/products">
+            <Button variant="eco" size="lg" className="text-lg px-8 py-6">
+              Start Shopping
+            </Button>
+          </a>
+          <a href="/add-product">
+            <Button variant="earth" size="lg" className="text-lg px-8 py-6">
+              Sell Your Items
+            </Button>
+          </a>
         </div>
         
         {/* Stats */}
